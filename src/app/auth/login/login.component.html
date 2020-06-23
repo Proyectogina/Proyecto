@@ -49,10 +49,10 @@
             <input type="text" class="form-control" formControlName="telefono" />
             <div *ngIf="banderita==true">
               <hr>
-              <label for="code">Enter your Verification Code Here</label><br>
-              <input type="text" name="code" formControlName="codigo">
+              <label for="code" >Enter your Verification Code Here</label><br>
+              <input type="text" name="code" formControlName="codigo" class="form-control">
           
-              <button (click)="verifyLoginCode()">Verify</button>
+              <button (click)="verifyLoginCode()" class="btn btn-primary btn-lg btn-block">Verify</button>
             </div>
             <div id="recaptcha-container"></div>
           </div>

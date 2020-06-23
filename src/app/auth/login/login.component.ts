@@ -92,15 +92,15 @@ export class LoginComponent {
     this.windowRef.recaptchaVerifier.render()
   }
 
-
+ telefono;
   sendLoginCode() {
 
     const appVerifier = this.windowRef.recaptchaVerifier;
 
-    const telefono = this.telform.value;
-    console.log(telefono.telefono);
+     this.telefono = this.telform.value;
+    console.log(this.telefono.telefono);
 
-    firebase.auth().signInWithPhoneNumber(telefono.telefono, appVerifier)
+    firebase.auth().signInWithPhoneNumber(this.telefono.telefono, appVerifier)
             .then(result => {
 
                 this.windowRef.confirmationResult = result;
@@ -119,6 +119,8 @@ export class LoginComponent {
                   .then( result => {
 
                     this.user = result.user;
+                    this.user= this.telefono;
+                    console.log(this.user);
 
     })
     .catch( error => console.log(error, "Incorrect code entered?"));
