@@ -35,6 +35,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { MessageService } from './services/message.service';
 import { WindowService } from './services/window.service';
 import { from } from 'rxjs';
+import { PhoneLoginComponent } from './components/phone-login/phone-login.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { from } from 'rxjs';
     ViajesComponent,
     ContactoComponent,
     BarraComponent,
-    QrComponent
+    QrComponent,
+    PhoneLoginComponent
     
   ],
   imports: [

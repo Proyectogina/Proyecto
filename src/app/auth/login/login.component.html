@@ -43,10 +43,18 @@
           
         </div>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <form [formGroup]="telform" (ngSubmit)="sendLoginCode()">
           <div class="form-group">
             <label for="email">Telefono</label>
             <input type="text" class="form-control" formControlName="telefono" />
+            <div *ngIf="banderita==true">
+              <hr>
+              <label for="code">Enter your Verification Code Here</label><br>
+              <input type="text" name="code" formControlName="codigo">
+          
+              <button (click)="verifyLoginCode()">Verify</button>
+            </div>
+            <div id="recaptcha-container"></div>
           </div>
           
           <button class="btn btn-primary btn-lg btn-block">
@@ -58,3 +66,12 @@
     </div>
   </div>
 </div>
+
+
+<div *ngIf="user">
+  You have successfully logged in with your phone number!
+
+  UserId: {{ user?.uid }}
+
+</div>
+
