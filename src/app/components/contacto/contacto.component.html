@@ -23,6 +23,7 @@
     <button type="submit" class="btn btn-primary" >Enviar</button>
   </form> -->
   <div class="container mt-5">
+    <div class="col-sm-11">
     <h2>Formulario de contacto</h2>
     <form (ngSubmit)="contactForm(form.value)" #form="ngForm">
     <div class="form-group">
@@ -43,4 +44,17 @@
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
+  </div>
+  <div class="row" style="background: gray;">
+    <div class="col-sm-6 p-5" >
+        <h3>Contactanos</h3>    
+        <p>Somos una agencia expresamente dedicada a poder hacer de tu experencia la mejor.
+            Si tienes algun comentario,favor de mencionarnoslo!!
+        </p>
+    </div> 
+    <div class="col-sm-5 p-5" >
+        <img src="../../../assets/equipo.jpg" alt="">
+    </div>
+  </div>
+
    </div>

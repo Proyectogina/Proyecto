@@ -36,6 +36,9 @@ import { MessageService } from './services/message.service';
 import { WindowService } from './services/window.service';
 import { from } from 'rxjs';
 import { PhoneLoginComponent } from './components/phone-login/phone-login.component';
+import { AcercaComponent } from './components/acerca/acerca.component';
+import { PreguntasComponent } from './components/preguntas/preguntas.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -49,7 +52,10 @@ import { PhoneLoginComponent } from './components/phone-login/phone-login.compon
     ContactoComponent,
     BarraComponent,
     QrComponent,
-    PhoneLoginComponent
+    PhoneLoginComponent,
+    AcercaComponent,
+    PreguntasComponent,
+    FooterComponent
     
   ],
   imports: [
