@@ -38,10 +38,10 @@
       <li class="nav-item" *ngIf="user?.email=='admin@hotmail.com'"><!--admin-->
         <a class="nav-link" [routerLink]="['informacion']" >Informacion</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="user?.email">
         <a class="nav-link"> {{ user?.email }}</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!(user?.email)">
         <a class="nav-link"> {{ user?.uid }}</a>
       </li>
       <li class="nav-item" *ngIf="user">
