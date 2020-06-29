@@ -21,7 +21,7 @@ export class BarraComponent  {
 
   constructor(public productService:ProductService) {
     console.log("hola");
-    console.log(this.productService.getProducts);
+     console.log(this.productService.getProducts);
     this.productService.getProducts()
     .snapshotChanges()
     .subscribe(item=>{
@@ -78,7 +78,7 @@ export class BarraComponent  {
 
   }
 
-
+ 
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.

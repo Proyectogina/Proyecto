@@ -10,7 +10,7 @@
                         <td><h5>Location</h5></td>
                         <td><h5>Price</h5></td>
                     </tr>
-                    <tr *ngFor="let product of productList"> 
+                    <tr *ngFor="let product of productList; let indic=index"> 
                         <td>{{product.name}}</td>
                         <td>{{product.category}}</td>
                         <td>{{product.location}}</td>
@@ -21,7 +21,9 @@
                         <a class="btn btn-danger text-white" (click)="onDelete(product.$key)">
                             <i class="fas fa-trash-alt"></i>
                         </a>
+                        <app-qr [indice]=indic></app-qr>
                     </tr>
+                   
                 </tbody>
 
             </table>

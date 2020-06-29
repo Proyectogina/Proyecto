@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-//services
-import{ProductService}from'../../../services/product.service'
- 
-//Product class
+// services
+import {ProductService} from '../../../services/product.service';
+
+// Product class
 import { Product } from '../../../models/product';
 
 
@@ -15,27 +15,27 @@ import { Product } from '../../../models/product';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(public productService:ProductService) { }
+  constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
     this.productService.getProducts();
-    this.resetForm();  
+    this.resetForm();
   }
 
-  onSubmit(productForm:NgForm){
-    if(productForm.value.$key==null){
+  onSubmit(productForm: NgForm){
+    if (productForm.value.$key == null){
       this.productService.insertProduct(productForm.value)
     }
     else{
        this.productService.updateProduct(productForm.value);
     }
-   this.resetForm(productForm);
+    this.resetForm(productForm);
   }
 
-  resetForm(productForm?:NgForm){
-    if(productForm!=null){ 
+  resetForm(productForm?: NgForm){
+    if (productForm != null){
       productForm.reset();
-      this.productService.selectedProduct=new Product();
+      this.productService.selectedProduct = new Product();
     }
   }
 
