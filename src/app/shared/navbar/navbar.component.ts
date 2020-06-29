@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   public user$: Observable<User> = this.authSvc.afAuth.user;
-  
+  lang: any;
 
   constructor(public authSvc: AuthService, private router: Router) {}
 
@@ -23,4 +23,12 @@ export class NavbarComponent {
       console.log(error);
     }
   }
+
+  decir(){
+    console.log('totis');
+    console.log(document.getElementById('texto'));
+    this.lang = new SpeechSynthesisUtterance(document.getElementById('texto').innerHTML);
+    this.lang.lang = 'spa-Mx';
+    speechSynthesis.speak(this.lang);
+ }
 }

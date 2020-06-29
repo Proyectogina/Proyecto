@@ -26,6 +26,7 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['preguntas']">Preguntas</a>
       </li>
+
     </ul>
     <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
       <li class="nav-item" *ngIf="user?.email=='admin@hotmail.com'"> <!--Esto es para que solo lo 
@@ -48,7 +49,12 @@
         <a href="#" class="nav-link" (click)="onLogout()">
           <img src="../../../assets/logout.png" alt="" width="28px">Logout</a>
       </li>
-
+      
+    </ul>
+    <ul>
+      <li class="nav-item active">
+        <a  (click)="decir()"><img src="../../../assets/accesibilidad.png" width="40px" alt=""></a>
+      </li>
     </ul>
     <ng-template #login>
       <ul class="navbar-nav mx-auto">
