@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm">
             <div class="card-columns" id="texto">
@@ -49,6 +49,29 @@
                 </div>
               </div>
         </div>
+        <ng-container *ngIf="user$ | async as user; else login">
+          <div class="col-sm-3" style="background: rgb(159, 165, 219);">
+            <div class="row m-5">  
+            <h3> ¡Bienvenido!</h3>
+                <h4>ahora que te registraste puedes checar</h4>
+              </div>
+                <div class="row m-5">
+                <button type="button" class="btn btn-primary m-2" (click)="funciones()">Lugar Económico</button>
+              </div>
+              <div class="row m-5">
+                <button type="button" class="btn btn-primary " (click)="funciones2()">Promociones</button>
+              </div>
+              <div class="row">
+                <ng-container *ngIf="resultado_consulta">
+                   <h6 class="m-5">
+                     {{resultado_consulta}}
+                   </h6>
+                </ng-container>
+              </div>
+          </div>
+      </ng-container>
+      <ng-template #login>
+      </ng-template>
 
     </div>
 </div>
