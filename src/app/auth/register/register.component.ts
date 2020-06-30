@@ -17,10 +17,13 @@ export class RegisterComponent {
 
   constructor(private authSvc: AuthService, private router: Router) {}
 
-  async onRegister() {
+  async onRegister(confirmpass:string) {
     const { email, password } = this.registerForm.value;
+
+    console.log(password);
+    console.log(confirmpass);
     try {
-      const user = await this.authSvc.register(email, password);
+      const user = await this.authSvc.register(email, password, confirmpass);
       if (user) {
         this.checkUserIsVerified(user);
       }

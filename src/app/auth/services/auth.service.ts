@@ -105,16 +105,36 @@ export class AuthService extends RoleValidator {
     }
   }
 
-  async register(email: string, password: string): Promise<User> {
+  async register(email: string, password: string, confirmpass:string): Promise<User> {
     try {
-      const { user } = await this.afAuth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-      await this.sendVerificationEmail();
-      return user;
+      if(password==confirmpass){
+        const { user } = await this.afAuth.createUserWithEmailAndPassword(
+          email,
+          password
+        );
+        await this.sendVerificationEmail();
+        return user;
+      }else{
+        Swal.fire(
+          'Error!',
+          'Las contraseñas son distintas',
+          'error',
+         
+       )
+      }
+      
     } catch (error) {
       console.log(error);
+
+      if(error.code=="auth/invalid-email"){ // por si el correo no es valido 
+        Swal.fire(
+          'Error!',
+          'Correo no valido',
+          'error',
+         
+       )
+      }
+
     }
   }
 
