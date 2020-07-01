@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   public user$: Observable<User> = this.authSvc.afAuth.user;
   lang: any;
+  bandera: boolean=false;
 
   constructor(public authSvc: AuthService, private router: Router) {}
 
@@ -25,10 +26,17 @@ export class NavbarComponent {
   }
 
   decir(){
+      if(this.bandera==true){
+        speechSynthesis.cancel();
+        this.bandera=false;
+        return;
+      }
+
     console.log('totis');
     console.log(document.getElementById('texto'));
     this.lang = new SpeechSynthesisUtterance(document.getElementById('texto').innerHTML);
     this.lang.lang = 'spa-Mx';
+    this.bandera=true;
     speechSynthesis.speak(this.lang);
  }
 }
