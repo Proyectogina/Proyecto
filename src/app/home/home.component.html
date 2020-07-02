@@ -53,23 +53,46 @@
         <ng-container *ngIf="user$ | async as user; else login">
           <div class="col-sm-3" style="background: rgb(159, 165, 219);">
             <div class="row m-5">  
-            <h3> ¡Bienvenido!</h3>
-                <h4>ahora que te registraste puedes checar</h4>
+            <h2> ¡Bienvenido! </h2>
+                <h3>ahora que te registraste puedes checar</h3>
               </div>
                 <div class="row m-5">
-                <button type="button" class="btn btn-primary m-2" (click)="funciones()">Lugar Económico</button>
+                <button type="button" class="btn btn-primary m-2" (click)="funciones()">Nuestros hoteles</button>
               </div>
+              <table class="table"> 
+                <div *ngIf="permissionhotel==true">
+                  <tr *ngFor="let hotel of hotelsList">
+                    <td scope="row">{{hotel.name}} </td>
+                    <td scope="row">Ubicación:{{hotel.location}}</td>
+                    <td scope="row">Estrellas:{{hotel.stars}}</td>
+    
+                  </tr>
+                </div>
+              </table>
+              
+              
               <div class="row m-5">
                 <button type="button" class="btn btn-primary " (click)="funciones2()">Promociones</button>
               </div>
+
+              <table class="table">
+                <div *ngIf="permissionpromotion==true">
+                  <tr *ngFor="let promotion of promotionsList">
+                    <td>{{promotion.type}}</td>
+                    <td>{{promotion.description}}</td>
+    
+                  </tr>
+                </div>
+              </table>
               
-              <div class="row">
+              
+              <!--<div class="row">
                 <ng-container *ngIf="resultado_consulta">
                    <h6 class="m-5">
                      {{resultado_consulta}}
                    </h6>
                 </ng-container>
-              </div>
+              </div>-->
           </div>
       </ng-container>
       <ng-template #login>
