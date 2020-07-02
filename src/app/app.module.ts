@@ -39,7 +39,8 @@ import { PhoneLoginComponent } from './components/phone-login/phone-login.compon
 import { AcercaComponent } from './components/acerca/acerca.component';
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button'; 
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SendEmailComponent,
@@ -68,11 +69,12 @@ import { FooterComponent } from './components/footer/footer.component';
     SweetAlert2Module.forRoot(),
     NgxQRCodeModule,
     ChartsModule,
-
+    MatButtonModule,
    
    
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard, ProductService, MessageService
   ,WindowService],
