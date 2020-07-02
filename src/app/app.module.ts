@@ -40,7 +40,8 @@ import { AcercaComponent } from './components/acerca/acerca.component';
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import { LoadingComponent } from './components/loading/loading.component'; 
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SendEmailComponent,
@@ -56,7 +57,8 @@ import {MatButtonModule} from '@angular/material/button';
     PhoneLoginComponent,
     AcercaComponent,
     PreguntasComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
     
   ],
   imports: [
