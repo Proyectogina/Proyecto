@@ -61,10 +61,15 @@
               </div>
               <table class="table"> 
                 <div *ngIf="permissionhotel==true">
+                  <tr>
+                    <th>Hotel</th>
+                    <th>Ubicación</th>
+                    <th>Estrellas</th>
+                  </tr>
                   <tr *ngFor="let hotel of hotelsList">
                     <td scope="row">{{hotel.name}} </td>
-                    <td scope="row">Ubicación:{{hotel.location}}</td>
-                    <td scope="row">Estrellas:{{hotel.stars}}</td>
+                    <td scope="row">{{hotel.location}}</td>
+                    <td scope="row">{{hotel.stars}}</td>
     
                   </tr>
                 </div>
@@ -77,6 +82,10 @@
 
               <table class="table">
                 <div *ngIf="permissionpromotion==true">
+                  <tr>
+                    <th>Promoción</th>
+                    <th>Descripción</th>
+                  </tr>
                   <tr *ngFor="let promotion of promotionsList">
                     <td>{{promotion.type}}</td>
                     <td>{{promotion.description}}</td>
