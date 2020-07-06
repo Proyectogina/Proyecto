@@ -14,10 +14,12 @@ value = '';
    productList: Product[];
   producto: any = [];
   @ Input() indice: any;
+  bandera3: boolean = false;
   // constructor() { }
   constructor(public productService: ProductService) {
 
-   console.log('tu puedes shuy');
+
+  // console.log('tu puedes shuy');
    // console.log(this.productService.getProducts);
    this.productService.getProducts()
     .snapshotChanges()
@@ -40,6 +42,8 @@ value = '';
 
 
 }  // termina el constructor
+
+
 
 // tslint:disable-next-line: member-ordering
 elementType = 'canvas';

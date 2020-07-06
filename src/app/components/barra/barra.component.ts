@@ -1,3 +1,4 @@
+import { QrService } from './../../services/qr.service';
 import { Component} from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
@@ -18,10 +19,11 @@ export class BarraComponent  {
    // tslint:disable-next-line: no-inferrable-types
    bandera: boolean = false;
    bandera2: boolean;
+   bandera3: boolean;
    public barChartData: ChartDataSets[];
    ele: ChartDataSets[];
 
-  constructor(public productService: ProductService) {
+  constructor(public productService: ProductService, public qrservice: QrService) {
 
     // tslint:disable-next-line: quotemark
     console.log("hola");
@@ -199,6 +201,20 @@ export class BarraComponent  {
       { data: data_prim, label: 'Primavera' }
     ];
 
+  }
+
+  peticionNode(index: any){
+    this.qrservice.realizarConsulta(index).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+  }
+
+  realizarPeticion(body: any) {
+    this.peticionNode(body);
+    // alert('inserte el estado antes de dar clic');
+    return false;
   }
 
 }

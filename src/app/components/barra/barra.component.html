@@ -21,7 +21,10 @@
                         <a class="btn btn-danger text-white" (click)="onDelete(product.$key)">
                             <i class="fas fa-trash-alt"></i>
                         </a>
-                        <app-qr [indice]=indic></app-qr>
+                        <button class="btn btn-primary" (click)='this.bandera3=true' (click)='realizarPeticion(indic)'> Genera QR  </button>
+                      <div *ngIf="this.bandera3">
+                        <app-qr  [indice]=indic></app-qr>
+                      </div>
                     </tr>
                    
                 </tbody>
