@@ -55,23 +55,21 @@
             <div class="row m-5">  
             <h2> ¡Bienvenido! </h2>
                 <h3>ahora que te registraste puedes checar</h3>
-                <!--<div>
-                  <mat-tab-group mat-align-tabs="start">
-                    <mat-tab label="First">Content 1</mat-tab>
-                    <mat-tab label="Second">Content 2</mat-tab>
-                    <mat-tab label="Third">Content 3</mat-tab>
-                  </mat-tab-group>
-                </div>-->
               </div>
                 <div class="row m-5">
                 <button type="button" class="btn btn-primary m-2" (click)="funciones()">Nuestros hoteles</button>
               </div>
               <table class="table"> 
                 <div *ngIf="permissionhotel==true">
+                  <tr>
+                    <th>Hotel</th>
+                    <th>Ubicación</th>
+                    <th>Estrellas</th>
+                  </tr>
                   <tr *ngFor="let hotel of hotelsList">
                     <td scope="row">{{hotel.name}} </td>
-                    <td scope="row">Ubicación:{{hotel.location}}</td>
-                    <td scope="row">Estrellas:{{hotel.stars}}</td>
+                    <td scope="row">{{hotel.location}}</td>
+                    <td scope="row">{{hotel.stars}}</td>
     
                   </tr>
                 </div>
@@ -84,6 +82,10 @@
 
               <table class="table">
                 <div *ngIf="permissionpromotion==true">
+                  <tr>
+                    <th>Promoción</th>
+                    <th>Descripción</th>
+                  </tr>
                   <tr *ngFor="let promotion of promotionsList">
                     <td>{{promotion.type}}</td>
                     <td>{{promotion.description}}</td>

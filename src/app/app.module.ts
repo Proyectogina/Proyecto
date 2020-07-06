@@ -43,7 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
-import {MatListModule} from '@angular/material/list'; 
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';  
 import { LoadingComponent } from './components/loading/loading.component'; 
 
 @NgModule({
@@ -78,7 +79,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     MatButtonModule,
     MatTabsModule,
     MatListModule,
- 
+    MatDialogModule,
     AngularFireDatabaseModule,
     FormsModule,
     BrowserAnimationsModule
