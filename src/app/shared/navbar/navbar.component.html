@@ -40,7 +40,7 @@
         <a class="nav-link" [routerLink]="['informacion']" >Informacion</a>
       </li>
       <li class="nav-item" *ngIf="user?.email">
-        <a class="nav-link"> {{ user?.email }}</a>
+        <a class="nav-link"> {{ user?.email | uppercase  }}</a> <!--Se usa el pipe para que el correo se vea en mayusculas-->
       </li>
       <li class="nav-item" *ngIf="!(user?.email)">
         <a class="nav-link"> {{ user?.uid }}</a>
